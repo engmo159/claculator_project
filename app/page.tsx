@@ -33,7 +33,7 @@ const math = create(all)
 export default function Home() {
   const [inputValue, setInputValue] = useState('')
   const [calcValue, setCalcValue] = useState('')
-  const inputRef = useRef()
+  const inputRef = useRef<HTMLInputElement>(null)
   const calcFunction = (btn: string) => {
     if (btn === 'CE') {
       setInputValue('')
@@ -84,8 +84,7 @@ export default function Home() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
-  const handleKeyDown = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.code)
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.code === 'Enter' || e.code === 'NumpadEnter') {
       calcFunction('=')
     }
