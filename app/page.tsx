@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Button from './components/Button'
 import { all, create, evaluate } from 'mathjs'
 
@@ -33,6 +33,7 @@ const math = create(all)
 export default function Home() {
   const [inputValue, setInputValue] = useState('')
   const [calcValue, setCalcValue] = useState('')
+  const inputRef = useRef()
   const calcFunction = (btn: string) => {
     if (btn === 'CE') {
       setInputValue('')
@@ -83,8 +84,15 @@ export default function Home() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
+  const handleKeyDown = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.code)
+    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+      calcFunction('=')
+    }
+  }
   useEffect(() => {
     // console.log(inputValue, calcValue)
+    inputRef?.current?.focus()
   }, [inputValue, setInputValue, calcValue])
 
   return (
@@ -100,10 +108,13 @@ export default function Home() {
           <div className='rounded-lg w-80 h-36  flex justify-center items-center bg-gradient-to-r from-slate-800 to-black shadow-inner'>
             <div className='w-[94%] h-[88%] rounded-lg bg-[#b0b5a6] shadow-inner'>
               <input
-                className='w-full h-1/2 bg-transparent text-blue-900 font-bold'
+                className='w-full h-1/2 bg-transparent text-blue-900 font-bold focus:outline-none'
                 type='text'
                 value={inputValue}
                 onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                ref={inputRef}
+                placeholder='Type Values From Keyboard Or Mouse'
               />
               <div className='w-full h-1/2 bg-transparent font-bold'>
                 {calcValue}
@@ -111,7 +122,7 @@ export default function Home() {
             </div>
           </div>
           {/* <!-- buttons --> */}
-          <div className='grid grid-cols-4 grid-rows-6 w-full gap-2 px-2'>
+          <div className='grid grid-cols-4 grid-rows-6 w-full gap-2 px-2 border-none'>
             {buttonArr.map((btn, index) => (
               <Button key={index} onClick={() => calcFunction(btn)}>
                 {btn}
