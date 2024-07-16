@@ -71,7 +71,7 @@ export default function Home() {
       setCalcValue(result.toString())
     } else if (btn === '%') {
       const floatValue = parseFloat(inputValue)
-      const result = floatValue
+      const result = floatValue * 100
       setInputValue(result.toString())
       setCalcValue(result.toString())
     } else if (btn === '÷') {
