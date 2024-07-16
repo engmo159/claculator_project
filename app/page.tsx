@@ -102,7 +102,7 @@ export default function Home() {
           <h1>Calculator</h1>
         </div>
         {/* <!-- calculator --> */}
-        <div className='h-[40rem] w-96 bg-gradient-to-r from-gray-400 to-gray-700 rounded-lg flex flex-col items-center justify-around shadow-inner mb-8'>
+        <div className='h-[40rem] w-96 bg-gradient-to-r from-gray-400 to-gray-700 rounded-lg flex flex-col items-center justify-around shadow-inner mb-8 border-gray-700 border-2'>
           {/* <!-- screen  --> */}
           <div className='rounded-lg w-80 h-36  flex justify-center items-center bg-gradient-to-r from-slate-800 to-black shadow-inner'>
             <div className='w-[94%] h-[88%] rounded-lg bg-[#b0b5a6] shadow-inner'>
