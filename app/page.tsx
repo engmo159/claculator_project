@@ -95,7 +95,7 @@ export default function Home() {
   }, [inputValue, setInputValue, calcValue])
 
   return (
-    <div className="bg-[url('/image/1.jpg')] bg-cover  flex items-center justify-center ">
+    <div className="bg-[url('/image/1.jpeg')] bg-cover  flex items-center justify-center ">
       <div className='text-center'>
         {/* <!-- text --> */}
         <div className='text-xl font-semibold m-4'>
