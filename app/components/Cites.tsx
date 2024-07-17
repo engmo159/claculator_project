@@ -35,8 +35,8 @@ const Cites = () => {
   }
   return (
     <div>
-      <div className='text-center text-5xl font-extrabold mt-4 shadow-2xl'>
-        <h1>Choose A City !!!</h1>
+      <div className='text-center text-5xl font-extrabold mt-4  '>
+        <p className=''>Choose A City !!!</p>
       </div>
       {/* buttons */}
       <div className='flex justify-evenly py-8  '>

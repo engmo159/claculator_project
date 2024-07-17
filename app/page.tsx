@@ -9,7 +9,7 @@ export default function Home() {
         <Calculator />
       </section>
       {/* cities page */}
-      <section className='h-screen'>
+      <section className='h-screen '>
         <Cites />
       </section>
     </div>
