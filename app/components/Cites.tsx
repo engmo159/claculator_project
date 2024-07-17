@@ -35,8 +35,11 @@ const Cites = () => {
   }
   return (
     <div>
+      <div className='text-center text-5xl font-extrabold mt-4 shadow-2xl'>
+        <h1>Choose A City !!!</h1>
+      </div>
       {/* buttons */}
-      <div className='flex justify-evenly my-8 '>
+      <div className='flex justify-evenly py-8  '>
         {buttonArr.map((btn, index) => (
           <button
             key={index}
@@ -54,16 +57,17 @@ const Cites = () => {
         </button>
       </div>
       {/* city div */}
-
       <div
-        className={`flex flex-col items-center justify-evenly p-12 mt-12 mb-20 mx-12 rounded-md bg-gray-700 text-white ${
+        className={`flex flex-col items-center justify-evenly p-12 mt-8 mb-20 mx-12 rounded-md bg-gray-700 text-white ${
           !visible ? 'hidden' : ''
         }`}
       >
-        <h1 className='text-3xl mb-10 text-red-950'>{city.header}</h1>
-        <p className='font-light text-lg tracking-wide mb-10'>
-          {city.paragraph}
-        </p>
+        <div className='mb-8'>
+          <h1 className='text-3xl  text-red-950'>{city.header}</h1>
+        </div>
+        <div className='mb-4'>
+          <p className='font-light text-lg tracking-wide '>{city.paragraph}</p>
+        </div>
         <div className='w-96 h-auto'>
           <Image
             src={city.src}
